@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<hi>Select a Location </hi>
+{% endblock %}
+{% block content %}
+<div id="div" style="height:532px">
+<form method="post">
+    {% csrf_token %}
+
+        <br/><br/><br/><br/><br/><br/>
+<h2> <select id="location" name="location">
+
+    <option selected disabled>Choose a location</option>
+    <option>Kumasi</option>
+    <option>Techiman</option>
+    <option>Ejura</option>
+</select></h2>
+    <br/><br/><br/><br/>
+    <input type="submit" value="submit">
+<h1 style="margin-left:-1200px;margin-top:-380px;opacity:0.8"><a href="{% url 'login' %}"> Back </a></h1>
+
+</form>
+</div>
+{% endblock content %}

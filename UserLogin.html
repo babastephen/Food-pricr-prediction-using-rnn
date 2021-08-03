@@ -1,0 +1,30 @@
+{%extends 'base.html' %}
+{% block head %}
+
+<hi>User Login Page</hi>
+<h1 id="back" style="padding-left:10px;margin-top:-40px;opacity:0.8"><a href="{% url 'home' %}"> Back </a></h1>
+{% endblock %}
+{% block content %}
+ <div id="div" style="height:532px">
+<form method="post">
+    {% csrf_token %}
+    <br/>
+    <br/>
+    <br/>
+  <label>&nbsp;
+        Username: &nbsp;&nbsp;&nbsp;</label>
+    <input name="user" type="text"  placeholder="Email" errormessage="Please enter a valid email address" required><br/><br/><br/>
+    <label>&nbsp;
+        Password: &nbsp;&nbsp;&nbsp;</label>
+    <input name="password" type="password"  placeholder="Password" required><br/><br/><br/>
+
+    <input type="submit" value="Login">
+    <h3 style="font-size:20px">Forgotten Password?   <a href="{% url 'resetpassword' %}">  reset</a></h3>
+    {% if messages %}
+        {% for message in messages %}
+    <h2>{{message}}</h2>
+        {% endfor %}
+    {% endif %}
+</form>
+ </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+{% block head %}
+<hi>Welcome to maizepriceghana </hi>
+<h1 class="forwardr" style="margin-top:-20px;"><a href="{% url 'signup' %}">  Register </a></h1>
+{%
+<h1 class="forwardl" style="margin-top:0px;"><a href="{% url 'login' %}">  Login </a></h1>
+{% endblock %}
+{% block content %}
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div id="stat" style="margin-left:320px;
+background-color:grey;
+color:white;
+height:300px;
+padding-left:10px;
+text-align:justify;
+width:700px;"><h1> Maizepriceghana gives investers especially those into agribusiness a fair idea about the
+market trend. Provide vital information to farmers and consumers about the price trends in selected markets.
+Currently the predicted wholesale prices of white maize for Kumasi, Ejura and Techiman for the next two months are available.
+</h1><h3 >Disclaimer: These prices are subject to change</h3></div>
+{% endblock %}

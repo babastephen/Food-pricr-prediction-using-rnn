@@ -1,0 +1,24 @@
+{%extends 'base.html' %}
+{% block content %}
+<form method="post">
+     {% csrf_token %}
+ <div id="div">
+     <h1><label>Enter prices for 100kg of each commodity</label></h1>
+   <label>&nbsp;&nbsp;Yellow Maize:</label> <input type="number" name="Mw">
+    <br/>
+    <br/>
+    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local Rice:</label> <input type="number" name="Mw">
+    <br/>
+    <br/>
+  <label>Imported Rice: </label><input type="number" name="Mw">
+    <br/>
+    <br/>
+   <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Millet: </label><input type="number" name="Mw">
+   <br/><br/>
+    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sorghum:</label> <input type="number" name="Mw">
+    <br/>
+    <br/>
+    <input type="submit" value="predict">
+ </div>
+</form>
+{% endblock content%}

@@ -1,0 +1,36 @@
+{%extends 'base.html' %}
+{% block head %}
+
+<hi>User SignUp Page</hi>
+<h1 id="back"><a href="{% url 'home' %}"> Back </a></h1>
+{% endblock %}
+{% block links %}
+<!--<a href="{% url 'login' %}">  Login</a>-->
+{% endblock %}
+{% block content %}
+<br/>
+<div id="div" style="height:532px;">
+<form method="post">
+     {% csrf_token %}
+    {% if messages %}
+        {% for message in messages %}
+    <h2 style="margin-top:-20px" :>{{message}}</h2>
+        {% endfor %}
+    {% endif %}
+    <label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Username: &nbsp;&nbsp;</label>
+    <input name="username" type="email"  placeholder="Email" required><br/><br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <label>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password: &nbsp;&nbsp;</label>
+    <input name="password" type="password"  placeholder="Password" required><br/><br/><br/>
+    <label style="font-size:30px">Confirm Password:&nbsp;&nbsp;</label>
+    <input name="cpassword" type="password"  placeholder="Confirm password" required><br/><br/><br/>
+    <label style="font-size:30px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number: &nbsp;&nbsp;</label>
+    <input name="phone" type="number"  placeholder="Phone number" required><br/><br/><br/>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input  type="submit" value="SignUp">
+    <h3>Already have an account?   <a href="{% url 'login' %}">Login</a></h3>
+</form>
+    <br/><br/><br/>
+</div>
+{% endblock content%}

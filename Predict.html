@@ -1,0 +1,29 @@
+{%extends 'base.html' %}
+{% block head %}
+<hi>Select a date </hi>
+<h1 id="back"><a href="{% url 'location' %}">  Back </a></h1>
+<h1 class="forward"><a href="{% url 'home' %}">  Logout </a></h1>
+{% endblock %}
+{% block content %}
+<div id="div" style="height:532px">
+<form method="post">
+    {% csrf_token %}
+
+
+<h2>Wholesale price for a 100kg bag of maize</h2>
+    <br/>
+    <select id="location" name="predict_date">
+
+        <option selected disabled>Choose a date.... </option>
+        {% for i in dat %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+    </select>
+     <br/> <br/> <br/>
+    <input type="submit" value="Predict" name="predict">
+    <br/> <br/> <br/>
+    <h2 style="color:white;font-size:25px">The predicted price for {{name}} {{tt}} Ghc  {{price}} for {{day}}</h2>
+     <h2>With a difference of GHC {{error}}</h2>
+</form>
+</div>
+{% endblock %}

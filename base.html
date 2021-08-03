@@ -1,0 +1,29 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+      {% endblock %}
+
+     <link href="{% static 'mycss/my.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class='header'>
+  {% block head %}
+      {% endblock %}
+</div>
+{% block content %}
+{% endblock %}
+<nav class="middle">
+  <h1>{% block middle %}
+      {% endblock %}
+  </h1>
+</nav>
+<div class='foot'>
+  {% block fooet %}
+      <h2 > maizeprice&copy-2021</h2>
+      {% endblock %}
+  </div>
+</body>
+</html>
